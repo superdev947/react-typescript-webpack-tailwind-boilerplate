@@ -1,11 +1,8 @@
 import { FC } from 'react'
+import Header from './layout/header'
 
 const App: FC = () => {
-  return (
-    <div className='bg-blue-500 min-h-screen flex items-center justify-center'>
-      <h1 className='text-white text-4xl font-bold'>Welcome to React with Tailwind CSS!</h1>
-    </div>
-  )
+  return <Header />
 }
 
 export default App
