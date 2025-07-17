@@ -1,6 +1,7 @@
 const eslint = require('@eslint/js')
 const tslint = require('typescript-eslint')
 const react = require('eslint-plugin-react')
+const importPlugin = require('eslint-plugin-import')
 const ts = require('@typescript-eslint/eslint-plugin')
 const parser = require('@typescript-eslint/parser')
 const globals = require('globals')
@@ -13,7 +14,8 @@ module.exports = [
     ignores: ['**/*.config.js'],
     plugins: {
       ts,
-      react
+      react,
+      import: importPlugin
     },
     languageOptions: {
       parser,
@@ -50,7 +52,30 @@ module.exports = [
         }
       ],
       // add new line above return
-      'newline-before-return': 'error'
+      'newline-before-return': 'error',
+      // Import sorting rules
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index'
+          ],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true
+          }
+        }
+      ],
+      'import/no-unresolved': 'off',
+      'import/named': 'off',
+      'import/default': 'off',
+      'import/namespace': 'off'
     }
   }
 ]
