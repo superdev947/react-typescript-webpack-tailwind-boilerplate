@@ -1,4 +1,59 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { useAppDispatch, useAppSelector } from '../store/hooks'
+import { loginStart, loginSuccess, loginFailure } from '../store/slices/authSlice'
+import { fetchUserSuccess } from '../store/slices/userSlice'
+
 export default function Login() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  const dispatch = useAppDispatch()
+  const { loading, error, isAuthenticated } = useAppSelector((state) => state.auth)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!email || !password) {
+      dispatch(loginFailure('Please fill in all fields'))
+
+      return
+    }
+
+    try {
+      dispatch(loginStart())
+
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
+
+      // Mock successful login
+      const mockToken = 'mock-jwt-token-' + Date.now()
+      const mockUser = {
+        id: '1',
+        email: email,
+        name: 'John Doe',
+        avatar: 'https://via.placeholder.com/150'
+      }
+
+      dispatch(loginSuccess({ token: mockToken }))
+      dispatch(fetchUserSuccess(mockUser))
+
+      // Redirect to home page
+      navigate('/')
+    } catch {
+      dispatch(loginFailure('Login failed. Please try again.'))
+    }
+  }
+
+  // Redirect if already authenticated
+  if (isAuthenticated) {
+    navigate('/')
+
+    return null
+  }
+
   return (
     <>
       <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
@@ -14,7 +69,13 @@ export default function Login() {
         </div>
 
         <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
-          <form action='#' method='POST' className='space-y-6'>
+          {error && (
+            <div className='mb-4 rounded-md bg-red-50 p-4'>
+              <div className='text-sm text-red-700'>{error}</div>
+            </div>
+          )}
+          
+          <form onSubmit={handleSubmit} className='space-y-6'>
             <div>
               <label htmlFor='email' className='block text-sm/6 font-medium text-gray-900'>
                 Email address
@@ -25,6 +86,8 @@ export default function Login() {
                   name='email'
                   type='email'
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   autoComplete='email'
                   className='block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6'
                 />
@@ -48,6 +111,8 @@ export default function Login() {
                   name='password'
                   type='password'
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   autoComplete='current-password'
                   className='block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6'
                 />
@@ -57,9 +122,10 @@ export default function Login() {
             <div>
               <button
                 type='submit'
-                className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                disabled={loading}
+                className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed'
               >
-                Sign in
+                {loading ? 'Signing in...' : 'Sign in'}
               </button>
             </div>
           </form>
