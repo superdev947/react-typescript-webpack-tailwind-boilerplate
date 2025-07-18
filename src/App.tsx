@@ -3,11 +3,12 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
 
-import './i18n'
 import { ThemeProvider } from './contexts/ThemeContext'
+import './i18n'
 import Header from './layout/header'
 import AnimatedDemo from './pages/AnimatedDemo'
 import Home from './pages/Home'
+import Landing from './pages/Landing'
 import Login from './pages/Login'
 import NotFound from './pages/NotFound'
 import ThemeDemo from './pages/ThemeDemo'
@@ -23,7 +24,8 @@ const App: FC = () => {
               <Header />
               <main>
                 <Routes>
-                  <Route path='/' element={<Home />} />
+                  <Route path='/' element={<Landing />} />
+                  <Route path='/home' element={<Home />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/theme-demo' element={<ThemeDemo />} />
                   <Route path='/animated-demo' element={<AnimatedDemo />} />

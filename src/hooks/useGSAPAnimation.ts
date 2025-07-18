@@ -133,4 +133,4 @@ export const animations = {
     duration: 0.8,
     ease: 'power2.out'
   }
-} 
+}

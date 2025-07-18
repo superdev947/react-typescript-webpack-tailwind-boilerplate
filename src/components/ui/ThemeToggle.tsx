@@ -26,9 +26,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '', size = 'md' }
   const baseClasses = 'rounded-lg transition-colors duration-200 focus:outline-none'
 
   const themeClasses =
-    theme === 'dark'
-      ? 'bg-gray-700 text-gray-100 hover:bg-gray-600'
-      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+    theme === 'dark' ? 'bg-gray-700 text-gray-100 hover:bg-gray-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
 
   return (
     <button

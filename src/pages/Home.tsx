@@ -13,9 +13,7 @@ const Home: FC = () => {
         <h1 className='text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100'>
           {t('home.title')}
         </h1>
-        <p className='mt-4 text-center text-lg text-gray-600 dark:text-gray-400'>
-          {t('home.subtitle')}
-        </p>
+        <p className='mt-4 text-center text-lg text-gray-600 dark:text-gray-400'>{t('home.subtitle')}</p>
       </div>
 
       <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-2xl'>
@@ -25,9 +23,7 @@ const Home: FC = () => {
               <h3 className='text-base font-semibold leading-6 text-gray-900 dark:text-gray-100'>
                 {t('home.gettingStarted.title')}
               </h3>
-              <p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
-                {t('home.gettingStarted.description')}
-              </p>
+              <p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>{t('home.gettingStarted.description')}</p>
               <div className='mt-4'>
                 <Link
                   to='/login'

@@ -21,26 +21,15 @@ const Button: React.FC<ButtonProps> = ({ variant = 'primary', size = 'md', class
   }
 
   const variantClasses = {
-    primary:
-      theme === 'dark'
-        ? 'bg-blue-600 text-white hover:bg-blue-700'
-        : 'bg-blue-600 text-white hover:bg-blue-700',
+    primary: theme === 'dark' ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-600 text-white hover:bg-blue-700',
     secondary:
-      theme === 'dark'
-        ? 'bg-gray-700 text-gray-100 hover:bg-gray-600'
-        : 'bg-gray-200 text-gray-900 hover:bg-gray-300',
+      theme === 'dark' ? 'bg-gray-700 text-gray-100 hover:bg-gray-600' : 'bg-gray-200 text-gray-900 hover:bg-gray-300',
     outline:
       theme === 'dark'
         ? 'border border-gray-600 text-gray-100 hover:bg-gray-700'
         : 'border border-gray-300 text-gray-700 hover:bg-gray-50',
-    ghost:
-      theme === 'dark'
-        ? 'text-gray-100 hover:bg-gray-700'
-        : 'text-gray-700 hover:bg-gray-100',
-    danger:
-      theme === 'dark'
-        ? 'bg-red-600 text-white hover:bg-red-700'
-        : 'bg-red-600 text-white hover:bg-red-700'
+    ghost: theme === 'dark' ? 'text-gray-100 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100',
+    danger: theme === 'dark' ? 'bg-red-600 text-white hover:bg-red-700' : 'bg-red-600 text-white hover:bg-red-700'
   }
 
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`

@@ -13,6 +13,6 @@ export const useTranslations = () => {
     t,
     changeLanguage,
     currentLanguage,
-    isReady: i18n.isInitialized,
+    isReady: i18n.isInitialized
   }
-} 
+}

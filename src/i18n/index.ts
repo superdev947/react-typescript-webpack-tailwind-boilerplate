@@ -10,20 +10,20 @@ import zh from './locales/zh.json'
 
 const resources = {
   en: {
-    translation: en,
+    translation: en
   },
   es: {
-    translation: es,
+    translation: es
   },
   fr: {
-    translation: fr,
+    translation: fr
   },
   de: {
-    translation: de,
+    translation: de
   },
   zh: {
-    translation: zh,
-  },
+    translation: zh
+  }
 }
 
 i18n
@@ -35,13 +35,13 @@ i18n
     debug: process.env.NODE_ENV === 'development',
 
     interpolation: {
-      escapeValue: false, // React already escapes values
+      escapeValue: false // React already escapes values
     },
 
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
-      caches: ['localStorage'],
-    },
+      caches: ['localStorage']
+    }
   })
 
-export default i18n 
+export default i18n

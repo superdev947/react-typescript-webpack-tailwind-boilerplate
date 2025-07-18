@@ -180,21 +180,21 @@ const ThemeDemo = () => {
                 label='Default Input'
                 placeholder='Enter your text here'
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
               <Input
                 label='Filled Input'
                 variant='filled'
                 placeholder='Filled variant'
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
               <Input
                 label='Outline Input'
                 variant='outline'
                 placeholder='Outline variant'
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
               <Input
                 label='Disabled Filled Input'
@@ -202,10 +202,10 @@ const ThemeDemo = () => {
                 placeholder='Disabled filled state'
                 disabled
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
             </div>
-            
+
             <div className='space-y-4'>
               <h3 className='font-medium text-gray-700 dark:text-gray-300'>Sizes & States</h3>
               <Input
@@ -213,28 +213,28 @@ const ThemeDemo = () => {
                 size='sm'
                 placeholder='Small size'
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
               <Input
                 label='Large Input'
                 size='lg'
                 placeholder='Large size'
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
               <Input
                 label='Error Input'
                 placeholder='With error state'
                 error='This field is required'
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
               <Input
                 label='Disabled Input'
                 placeholder='Disabled state'
                 disabled
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
               <Input
                 label='Disabled Outline Input'
@@ -242,7 +242,7 @@ const ThemeDemo = () => {
                 placeholder='Disabled outline state'
                 disabled
                 value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                onChange={e => setInputValue(e.target.value)}
               />
             </div>
           </div>

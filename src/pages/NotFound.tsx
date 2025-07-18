@@ -12,9 +12,7 @@ const NotFound: FC = () => {
         <h2 className='mt-4 text-center text-2xl font-semibold text-gray-700 dark:text-gray-300'>
           {t('notFound.title')}
         </h2>
-        <p className='mt-4 text-center text-lg text-gray-600 dark:text-gray-400'>
-          {t('notFound.description')}
-        </p>
+        <p className='mt-4 text-center text-lg text-gray-600 dark:text-gray-400'>{t('notFound.description')}</p>
       </div>
 
       <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
@@ -23,9 +21,7 @@ const NotFound: FC = () => {
             <h3 className='text-base font-semibold leading-6 text-gray-900 dark:text-gray-100'>
               {t('notFound.whatHappened')}
             </h3>
-            <p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
-              {t('notFound.explanation')}
-            </p>
+            <p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>{t('notFound.explanation')}</p>
             <div className='mt-4 flex gap-3'>
               <Link
                 to='/'

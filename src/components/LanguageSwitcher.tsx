@@ -14,7 +14,7 @@ const languages: LanguageOption[] = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' }
 ]
 
 const LanguageSwitcher: FC = () => {
@@ -36,10 +36,10 @@ const LanguageSwitcher: FC = () => {
       }
       items={languages.map(lang => ({
         label: `${lang.flag} ${lang.name}`,
-        onClick: () => handleLanguageChange(lang.code),
+        onClick: () => handleLanguageChange(lang.code)
       }))}
     />
   )
 }
 
-export default LanguageSwitcher 
+export default LanguageSwitcher

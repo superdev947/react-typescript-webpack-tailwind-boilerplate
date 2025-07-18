@@ -15,7 +15,7 @@ const InputWithIcons = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
         <div className='space-y-4'>
           <h3 className='font-medium text-gray-700 dark:text-gray-300'>With Icons</h3>
-          
+
           <Input
             label='Email Address'
             type='email'
@@ -24,7 +24,7 @@ const InputWithIcons = () => {
             value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
           />
-          
+
           <Input
             label='Username'
             placeholder='Enter your username'
@@ -32,7 +32,7 @@ const InputWithIcons = () => {
             value={username}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
           />
-          
+
           <Input
             label='Search'
             placeholder='Search...'
@@ -41,10 +41,10 @@ const InputWithIcons = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
           />
         </div>
-        
+
         <div className='space-y-4'>
           <h3 className='font-medium text-gray-700 dark:text-gray-300'>Password Input</h3>
-          
+
           <Input
             label='Password'
             type={showPassword ? 'text' : 'password'}
@@ -62,7 +62,7 @@ const InputWithIcons = () => {
             value={password}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
           />
-          
+
           <Input
             label='Email with Helper Text'
             type='email'
@@ -72,7 +72,7 @@ const InputWithIcons = () => {
             value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
           />
-          
+
           <Input
             label='Required Field'
             placeholder='This field is required'
@@ -87,4 +87,4 @@ const InputWithIcons = () => {
   )
 }
 
-export default InputWithIcons 
+export default InputWithIcons

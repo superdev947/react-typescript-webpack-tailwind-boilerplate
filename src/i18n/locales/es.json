@@ -96,5 +96,132 @@
     "fr": "Français",
     "de": "Deutsch",
     "zh": "中文"
+  },
+  "landing": {
+    "navigation": {
+      "features": "Características",
+      "pricing": "Precios",
+      "about": "Acerca de",
+      "login": "Iniciar sesión"
+    },
+    "hero": {
+      "title": "Construye aplicaciones increíbles con herramientas modernas",
+      "subtitle": "Un boilerplate completo de React TypeScript con Webpack, Tailwind CSS, Redux y soporte de internacionalización.",
+      "cta": {
+        "primary": "Comenzar",
+        "secondary": "Saber más"
+      }
+    },
+    "features": {
+      "section": {
+        "title": "Todo lo que necesitas",
+        "subtitle": "Características poderosas para desarrollo moderno",
+        "description": "Nuestro boilerplate incluye todas las herramientas y bibliotecas esenciales que necesitas para construir aplicaciones escalables y mantenibles."
+      },
+      "react": {
+        "title": "React 18",
+        "description": "Últimas características de React con hooks, context y patrones modernos para construir interfaces de usuario interactivas."
+      },
+      "typescript": {
+        "title": "TypeScript",
+        "description": "Desarrollo con seguridad de tipos con soporte completo de IntelliSense y verificación de errores en tiempo de compilación."
+      },
+      "tailwind": {
+        "title": "Tailwind CSS",
+        "description": "Framework CSS utility-first para desarrollo rápido de UI con soporte de modo oscuro."
+      },
+      "redux": {
+        "title": "Redux Toolkit",
+        "description": "Gestión de estado con Redux Toolkit y Redux Persist para manejo confiable de datos."
+      },
+      "i18n": {
+        "title": "Internacionalización",
+        "description": "Soporte multi-idioma con react-i18next para aplicaciones globales."
+      },
+      "theme": {
+        "title": "Modo Oscuro",
+        "description": "Cambio de tema integrado con detección de preferencias del sistema y configuraciones persistentes."
+      }
+    },
+    "testimonials": {
+      "section": {
+        "title": "Confiado por desarrolladores en todo el mundo",
+        "subtitle": "Mira lo que dicen nuestros usuarios sobre nuestro boilerplate"
+      },
+      "testimonial1": {
+        "body": "Este boilerplate me ahorró semanas de tiempo de configuración. La configuración de TypeScript es perfecta y la implementación del modo oscuro es fluida.",
+        "author": {
+          "name": "Sarah Chen",
+          "handle": "sarahchen"
+        }
+      },
+      "testimonial2": {
+        "body": "La configuración de internacionalización es excelente. Pude agregar múltiples idiomas a mi aplicación en solo unas horas.",
+        "author": {
+          "name": "Marcus Rodriguez",
+          "handle": "marcusdev"
+        }
+      },
+      "testimonial3": {
+        "body": "La integración de Redux Toolkit es perfecta. La gestión de estado es limpia y la persistencia funciona perfectamente.",
+        "author": {
+          "name": "Alex Thompson",
+          "handle": "alexthompson"
+        }
+      }
+    },
+    "pricing": {
+      "section": {
+        "title": "Precios simples y transparentes",
+        "subtitle": "Elige el plan que sea adecuado para ti",
+        "description": "Comienza con nuestro nivel gratuito y actualiza según crezcan tus necesidades."
+      },
+      "mostPopular": "Más popular",
+      "getStarted": "Comenzar",
+      "starter": {
+        "name": "Inicial",
+        "price": "$0",
+        "description": "Perfecto para proyectos personales y aprendizaje",
+        "features": {
+          "feature1": "Todas las características principales",
+          "feature2": "Soporte básico",
+          "feature3": "Acceso a la comunidad",
+          "feature4": "1 proyecto"
+        }
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$29",
+        "description": "Para desarrolladores profesionales y equipos",
+        "features": {
+          "feature1": "Todo en Inicial",
+          "feature2": "Soporte prioritario",
+          "feature3": "Características avanzadas",
+          "feature4": "Proyectos ilimitados",
+          "feature5": "Colaboración en equipo",
+          "feature6": "Integraciones personalizadas"
+        }
+      },
+      "enterprise": {
+        "name": "Empresa",
+        "price": "$99",
+        "description": "Para organizaciones grandes y empresas",
+        "features": {
+          "feature1": "Todo en Pro",
+          "feature2": "Soporte dedicado",
+          "feature3": "Desarrollo personalizado",
+          "feature4": "Garantías SLA",
+          "feature5": "Implementación on-premise",
+          "feature6": "Analíticas avanzadas",
+          "feature7": "Opciones white-label"
+        }
+      }
+    },
+    "cta": {
+      "title": "¿Listo para comenzar?",
+      "subtitle": "Únete a miles de desarrolladores construyendo aplicaciones increíbles",
+      "primary": "Comenzar a construir",
+      "secondary": "Ver documentación"
+    }
   }
 } 

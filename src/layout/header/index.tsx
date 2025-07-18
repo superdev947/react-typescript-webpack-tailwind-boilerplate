@@ -21,10 +21,13 @@ import {
 } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import LanguageSwitcher from '../../components/LanguageSwitcher'
 import { ThemeToggle } from '../../components/ui'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
+import { logout } from '../../store/slices/authSlice'
+import { clearUser } from '../../store/slices/userSlice'
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -38,9 +41,18 @@ const callsToAction = [
   { name: 'Contact sales', href: '#', icon: PhoneIcon }
 ]
 
-export default function Example() {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { t } = useTranslation()
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+  const { isAuthenticated } = useAppSelector(state => state.auth)
+
+  const handleLogout = () => {
+    dispatch(logout())
+    dispatch(clearUser())
+    navigate('/login')
+  }
 
   return (
     <header className='bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700'>
@@ -119,16 +131,22 @@ export default function Example() {
           <Link to='/animated-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
             {t('navigation.animatedDemo')}
           </Link>
-          <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            {t('navigation.login')}
-          </Link>
         </PopoverGroup>
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4'>
+        <div className='hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-4'>
           <LanguageSwitcher />
           <ThemeToggle />
-          <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            {t('navigation.login')} <span aria-hidden='true'>&rarr;</span>
-          </Link>
+          {isAuthenticated ? (
+            <button
+              onClick={handleLogout}
+              className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100 hover:underline px-3 py-2 rounded'
+            >
+              {t('common.logout')}
+            </button>
+          ) : (
+            <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
+              {t('navigation.login')} <span aria-hidden='true'>&rarr;</span>
+            </Link>
+          )}
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className='lg:hidden'>
@@ -191,20 +209,23 @@ export default function Example() {
                 >
                   {t('navigation.animatedDemo')}
                 </Link>
-                <Link
-                  to='/login'
-                  className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
-                >
-                  {t('navigation.login')}
-                </Link>
               </div>
               <div className='py-6'>
-                <Link
-                  to='/login'
-                  className='-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
-                >
-                  {t('navigation.login')}
-                </Link>
+                {isAuthenticated ? (
+                  <button
+                    onClick={handleLogout}
+                    className='-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 w-full text-left'
+                  >
+                    {t('common.logout')}
+                  </button>
+                ) : (
+                  <Link
+                    to='/login'
+                    className='-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
+                  >
+                    {t('navigation.login')}
+                  </Link>
+                )}
               </div>
             </div>
           </div>

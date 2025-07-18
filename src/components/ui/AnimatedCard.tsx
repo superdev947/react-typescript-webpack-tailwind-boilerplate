@@ -28,17 +28,18 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({
     animationType,
     duration,
     delay,
-    scrollTrigger: scrollTrigger ? {
-      start: 'top 85%',
-      end: 'bottom 15%'
-    } : undefined
+    scrollTrigger: scrollTrigger
+      ? {
+          start: 'top 85%',
+          end: 'bottom 15%'
+        }
+      : undefined
   })
 
   const baseClasses = 'rounded-lg border transition-colors duration-200'
-  
-  const themeClasses = theme === 'dark'
-    ? 'bg-gray-800 border-gray-700 text-gray-100'
-    : 'bg-white border-gray-200 text-gray-900 shadow-sm'
+
+  const themeClasses =
+    theme === 'dark' ? 'bg-gray-800 border-gray-700 text-gray-100' : 'bg-white border-gray-200 text-gray-900 shadow-sm'
 
   const paddingClasses = {
     none: '',
@@ -56,4 +57,4 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({
   )
 }
 
-export default AnimatedCard 
+export default AnimatedCard
