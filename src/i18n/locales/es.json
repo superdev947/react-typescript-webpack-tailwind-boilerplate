@@ -1,0 +1,100 @@
+{
+  "common": {
+    "welcome": "Bienvenido a tu aplicación",
+    "home": "Inicio",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "theme": "Tema",
+    "language": "Idioma",
+    "dark": "Oscuro",
+    "light": "Claro",
+    "system": "Sistema",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "submit": "Enviar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "refresh": "Actualizar",
+    "download": "Descargar",
+    "upload": "Subir",
+    "settings": "Configuración",
+    "profile": "Perfil",
+    "notifications": "Notificaciones",
+    "help": "Ayuda",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "copyright": "Derechos de autor"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "login": "Iniciar sesión",
+    "themeDemo": "Demo de tema",
+    "animatedDemo": "Demo animado",
+    "notFound": "Página no encontrada"
+  },
+  "home": {
+    "title": "Bienvenido a tu aplicación",
+    "subtitle": "Esta es tu página de inicio. Comienza a construir tu aplicación aquí.",
+    "gettingStarted": {
+      "title": "Comenzar",
+      "description": "Esta es una aplicación React TypeScript con Webpack, Tailwind CSS, React Router y Redux con Persist.",
+      "goToLogin": "Ir al login"
+    }
+  },
+  "login": {
+    "title": "Inicia sesión en tu cuenta",
+    "subtitle": "Ingresa tus credenciales para acceder a tu cuenta",
+    "email": "Dirección de correo electrónico",
+    "password": "Contraseña",
+    "rememberMe": "Recordarme",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "signIn": "Iniciar sesión",
+    "signingIn": "Iniciando sesión...",
+    "noAccount": "¿No tienes una cuenta?",
+    "signUp": "Registrarse",
+    "or": "O",
+    "continueWith": "Continuar con",
+    "error": {
+      "fillFields": "Por favor completa todos los campos",
+      "failed": "Error al iniciar sesión. Por favor intenta de nuevo."
+    }
+  },
+  "theme": {
+    "title": "Demo de tema",
+    "description": "Esta página demuestra la funcionalidad de cambio de tema.",
+    "currentTheme": "Tema actual",
+    "themeOptions": "Opciones de tema"
+  },
+  "animated": {
+    "title": "Demo animado",
+    "description": "Esta página demuestra animaciones GSAP.",
+    "animateButton": "Animar",
+    "resetButton": "Reiniciar"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "Lo sentimos, no pudimos encontrar la página que buscas.",
+    "whatHappened": "¿Qué pasó?",
+    "explanation": "La página que solicitaste no se pudo encontrar. Es posible que haya sido movida, eliminada o que hayas ingresado la URL incorrecta.",
+    "goHome": "Volver al inicio"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文"
+  }
+} 

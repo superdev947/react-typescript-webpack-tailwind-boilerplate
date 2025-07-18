@@ -1,0 +1,100 @@
+{
+  "common": {
+    "welcome": "Welcome to Your App",
+    "home": "Home",
+    "login": "Login",
+    "logout": "Logout",
+    "theme": "Theme",
+    "language": "Language",
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "download": "Download",
+    "upload": "Upload",
+    "settings": "Settings",
+    "profile": "Profile",
+    "notifications": "Notifications",
+    "help": "Help",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "Copyright"
+  },
+  "navigation": {
+    "home": "Home",
+    "login": "Login",
+    "themeDemo": "Theme Demo",
+    "animatedDemo": "Animated Demo",
+    "notFound": "Page Not Found"
+  },
+  "home": {
+    "title": "Welcome to Your App",
+    "subtitle": "This is your home page. Start building your application here.",
+    "gettingStarted": {
+      "title": "Getting Started",
+      "description": "This is a React TypeScript application with Webpack, Tailwind CSS, React Router, and Redux with Persist.",
+      "goToLogin": "Go to Login"
+    }
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "subtitle": "Enter your credentials to access your account",
+    "email": "Email address",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot your password?",
+    "signIn": "Sign in",
+    "signingIn": "Signing in...",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "or": "Or",
+    "continueWith": "Continue with",
+    "error": {
+      "fillFields": "Please fill in all fields",
+      "failed": "Login failed. Please try again."
+    }
+  },
+  "theme": {
+    "title": "Theme Demo",
+    "description": "This page demonstrates the theme switching functionality.",
+    "currentTheme": "Current Theme",
+    "themeOptions": "Theme Options"
+  },
+  "animated": {
+    "title": "Animated Demo",
+    "description": "This page demonstrates GSAP animations.",
+    "animateButton": "Animate",
+    "resetButton": "Reset"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find the page you're looking for.",
+    "whatHappened": "What happened?",
+    "explanation": "The page you requested could not be found. It might have been moved, deleted, or you entered the wrong URL.",
+    "goHome": "Go back home"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文"
+  }
+} 

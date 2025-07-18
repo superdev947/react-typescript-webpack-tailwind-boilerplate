@@ -20,8 +20,10 @@ import {
   XMarkIcon
 } from '@heroicons/react/24/outline'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
+import LanguageSwitcher from '../../components/LanguageSwitcher'
 import { ThemeToggle } from '../../components/ui'
 
 const products = [
@@ -38,6 +40,7 @@ const callsToAction = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { t } = useTranslation()
 
   return (
     <header className='bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700'>
@@ -108,22 +111,23 @@ export default function Example() {
           </Popover>
 
           <Link to='/' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            Home
+            {t('navigation.home')}
           </Link>
           <Link to='/theme-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            Theme Demo
+            {t('navigation.themeDemo')}
           </Link>
           <Link to='/animated-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            Animated Demo
+            {t('navigation.animatedDemo')}
           </Link>
           <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            Login
+            {t('navigation.login')}
           </Link>
         </PopoverGroup>
         <div className='hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4'>
+          <LanguageSwitcher />
           <ThemeToggle />
           <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            Log in <span aria-hidden='true'>&rarr;</span>
+            {t('navigation.login')} <span aria-hidden='true'>&rarr;</span>
           </Link>
         </div>
       </nav>
@@ -173,25 +177,25 @@ export default function Example() {
                   to='/'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
                 >
-                  Home
+                  {t('navigation.home')}
                 </Link>
                 <Link
                   to='/theme-demo'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
                 >
-                  Theme Demo
+                  {t('navigation.themeDemo')}
                 </Link>
                 <Link
                   to='/animated-demo'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
                 >
-                  Animated Demo
+                  {t('navigation.animatedDemo')}
                 </Link>
                 <Link
                   to='/login'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
                 >
-                  Login
+                  {t('navigation.login')}
                 </Link>
               </div>
               <div className='py-6'>
@@ -199,7 +203,7 @@ export default function Example() {
                   to='/login'
                   className='-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
                 >
-                  Log in
+                  {t('navigation.login')}
                 </Link>
               </div>
             </div>

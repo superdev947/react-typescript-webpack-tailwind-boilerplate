@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
 
+import './i18n'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Header from './layout/header'
 import AnimatedDemo from './pages/AnimatedDemo'

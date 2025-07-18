@@ -1,0 +1,100 @@
+{
+  "common": {
+    "welcome": "Bienvenue dans votre application",
+    "home": "Accueil",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "theme": "Thème",
+    "language": "Langue",
+    "dark": "Sombre",
+    "light": "Clair",
+    "system": "Système",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "submit": "Soumettre",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "refresh": "Actualiser",
+    "download": "Télécharger",
+    "upload": "Téléverser",
+    "settings": "Paramètres",
+    "profile": "Profil",
+    "notifications": "Notifications",
+    "help": "Aide",
+    "about": "À propos",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "copyright": "Droits d'auteur"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "login": "Connexion",
+    "themeDemo": "Démo de thème",
+    "animatedDemo": "Démo animé",
+    "notFound": "Page non trouvée"
+  },
+  "home": {
+    "title": "Bienvenue dans votre application",
+    "subtitle": "Ceci est votre page d'accueil. Commencez à construire votre application ici.",
+    "gettingStarted": {
+      "title": "Commencer",
+      "description": "Ceci est une application React TypeScript avec Webpack, Tailwind CSS, React Router et Redux avec Persist.",
+      "goToLogin": "Aller à la connexion"
+    }
+  },
+  "login": {
+    "title": "Connectez-vous à votre compte",
+    "subtitle": "Entrez vos identifiants pour accéder à votre compte",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion en cours...",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire",
+    "or": "Ou",
+    "continueWith": "Continuer avec",
+    "error": {
+      "fillFields": "Veuillez remplir tous les champs",
+      "failed": "Échec de la connexion. Veuillez réessayer."
+    }
+  },
+  "theme": {
+    "title": "Démo de thème",
+    "description": "Cette page démontre la fonctionnalité de changement de thème.",
+    "currentTheme": "Thème actuel",
+    "themeOptions": "Options de thème"
+  },
+  "animated": {
+    "title": "Démo animé",
+    "description": "Cette page démontre les animations GSAP.",
+    "animateButton": "Animer",
+    "resetButton": "Réinitialiser"
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "description": "Désolé, nous n'avons pas pu trouver la page que vous recherchez.",
+    "whatHappened": "Que s'est-il passé ?",
+    "explanation": "La page que vous avez demandée n'a pas pu être trouvée. Elle a peut-être été déplacée, supprimée ou vous avez saisi une URL incorrecte.",
+    "goHome": "Retour à l'accueil"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文"
+  }
+} 

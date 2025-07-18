@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../store/hooks'
@@ -9,6 +10,7 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const dispatch = useAppDispatch()
   const { loading, error, isAuthenticated } = useAppSelector(state => state.auth)
@@ -17,7 +19,7 @@ export default function Login() {
     e.preventDefault()
 
     if (!email || !password) {
-      dispatch(loginFailure('Please fill in all fields'))
+      dispatch(loginFailure(t('login.error.fillFields')))
 
       return
     }
@@ -43,7 +45,7 @@ export default function Login() {
       // Redirect to home page
       navigate('/')
     } catch {
-      dispatch(loginFailure('Login failed. Please try again.'))
+      dispatch(loginFailure(t('login.error.failed')))
     }
   }
 
@@ -63,8 +65,8 @@ export default function Login() {
             src='https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600'
             className='mx-auto h-10 w-auto'
           />
-          <h2 className='mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900'>
-            Sign in to your account
+          <h2 className='mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-gray-100'>
+            {t('login.title')}
           </h2>
         </div>
 
@@ -77,8 +79,8 @@ export default function Login() {
 
           <form onSubmit={handleSubmit} className='space-y-6'>
             <div>
-              <label htmlFor='email' className='block text-sm/6 font-medium text-gray-900'>
-                Email address
+              <label htmlFor='email' className='block text-sm/6 font-medium text-gray-900 dark:text-gray-100'>
+                {t('login.email')}
               </label>
               <div className='mt-2'>
                 <input
@@ -96,12 +98,12 @@ export default function Login() {
 
             <div>
               <div className='flex items-center justify-between'>
-                <label htmlFor='password' className='block text-sm/6 font-medium text-gray-900'>
-                  Password
+                <label htmlFor='password' className='block text-sm/6 font-medium text-gray-900 dark:text-gray-100'>
+                  {t('login.password')}
                 </label>
                 <div className='text-sm'>
                   <a href='#' className='font-semibold text-indigo-600 hover:text-indigo-500'>
-                    Forgot password?
+                    {t('login.forgotPassword')}
                   </a>
                 </div>
               </div>
@@ -125,15 +127,15 @@ export default function Login() {
                 disabled={loading}
                 className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed'
               >
-                {loading ? 'Signing in...' : 'Sign in'}
+                {loading ? t('login.signingIn') : t('login.signIn')}
               </button>
             </div>
           </form>
 
-          <p className='mt-10 text-center text-sm/6 text-gray-500'>
-            Not a member?{' '}
+          <p className='mt-10 text-center text-sm/6 text-gray-500 dark:text-gray-400'>
+            {t('login.noAccount')}{' '}
             <a href='#' className='font-semibold text-indigo-600 hover:text-indigo-500'>
-              Start a 14 day free trial
+              {t('login.signUp')}
             </a>
           </p>
         </div>

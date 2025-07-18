@@ -1,0 +1,100 @@
+{
+  "common": {
+    "welcome": "Willkommen in Ihrer App",
+    "home": "Startseite",
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "theme": "Design",
+    "language": "Sprache",
+    "dark": "Dunkel",
+    "light": "Hell",
+    "system": "System",
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "submit": "Absenden",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "sort": "Sortieren",
+    "refresh": "Aktualisieren",
+    "download": "Herunterladen",
+    "upload": "Hochladen",
+    "settings": "Einstellungen",
+    "profile": "Profil",
+    "notifications": "Benachrichtigungen",
+    "help": "Hilfe",
+    "about": "Über",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "terms": "Bedingungen",
+    "copyright": "Urheberrecht"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "login": "Anmelden",
+    "themeDemo": "Design-Demo",
+    "animatedDemo": "Animations-Demo",
+    "notFound": "Seite nicht gefunden"
+  },
+  "home": {
+    "title": "Willkommen in Ihrer App",
+    "subtitle": "Dies ist Ihre Startseite. Beginnen Sie hier mit dem Aufbau Ihrer Anwendung.",
+    "gettingStarted": {
+      "title": "Erste Schritte",
+      "description": "Dies ist eine React TypeScript-Anwendung mit Webpack, Tailwind CSS, React Router und Redux mit Persist.",
+      "goToLogin": "Zur Anmeldung"
+    }
+  },
+  "login": {
+    "title": "Melden Sie sich in Ihrem Konto an",
+    "subtitle": "Geben Sie Ihre Anmeldedaten ein, um auf Ihr Konto zuzugreifen",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "rememberMe": "Angemeldet bleiben",
+    "forgotPassword": "Passwort vergessen?",
+    "signIn": "Anmelden",
+    "signingIn": "Anmeldung läuft...",
+    "noAccount": "Haben Sie kein Konto?",
+    "signUp": "Registrieren",
+    "or": "Oder",
+    "continueWith": "Weiter mit",
+    "error": {
+      "fillFields": "Bitte füllen Sie alle Felder aus",
+      "failed": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut."
+    }
+  },
+  "theme": {
+    "title": "Design-Demo",
+    "description": "Diese Seite demonstriert die Design-Wechsel-Funktionalität.",
+    "currentTheme": "Aktuelles Design",
+    "themeOptions": "Design-Optionen"
+  },
+  "animated": {
+    "title": "Animations-Demo",
+    "description": "Diese Seite demonstriert GSAP-Animationen.",
+    "animateButton": "Animieren",
+    "resetButton": "Zurücksetzen"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Entschuldigung, wir konnten die gesuchte Seite nicht finden.",
+    "whatHappened": "Was ist passiert?",
+    "explanation": "Die angeforderte Seite konnte nicht gefunden werden. Sie wurde möglicherweise verschoben, gelöscht oder Sie haben eine falsche URL eingegeben.",
+    "goHome": "Zurück zur Startseite"
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "zh": "中文"
+  }
+} 
