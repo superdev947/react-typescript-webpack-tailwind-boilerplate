@@ -25,8 +25,8 @@ const HeroSection: FC<HeroSectionProps> = ({ t }) => (
           <div className='relative rounded-full px-4 py-1 text-sm leading-6 text-gray-600 dark:text-gray-400 ring-1 ring-gray-900/10 dark:ring-gray-100/10 hover:ring-gray-900/20 dark:hover:ring-gray-100/20'>
             {t('landing.hero.badge')}{' '}
             <Link to='/features' className='font-semibold text-indigo-600 dark:text-indigo-400'>
-              <span className='absolute inset-0 rounded-full' aria-hidden='true'></span>{' '}
-              {t('landing.hero.badgeLink')} <span aria-hidden='true'>→</span>
+              <span className='absolute inset-0 rounded-full' aria-hidden='true'></span> {t('landing.hero.badgeLink')}{' '}
+              <span aria-hidden='true'>→</span>
             </Link>
           </div>
         </div>
@@ -55,7 +55,7 @@ const HeroSection: FC<HeroSectionProps> = ({ t }) => (
             <div className='flex -space-x-1'>
               <img
                 className='h-6 w-6 rounded-full ring-2 ring-white dark:ring-gray-900'
-                src='https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
                 alt=''
               />
               <img
@@ -99,4 +99,4 @@ const HeroSection: FC<HeroSectionProps> = ({ t }) => (
   </div>
 )
 
-export default HeroSection 
+export default HeroSection

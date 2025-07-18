@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import React, { Fragment } from 'react'
 
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '@/contexts/ThemeContext'
 
 interface ModalProps {
   isOpen: boolean

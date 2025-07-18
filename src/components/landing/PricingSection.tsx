@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import PricingCard from '../ui/PricingCard'
 
 interface Tier {

@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import Accordion from '../ui/Accordion'
 
 interface FAQSectionProps {

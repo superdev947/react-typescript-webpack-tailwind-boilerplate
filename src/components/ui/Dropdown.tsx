@@ -2,10 +2,10 @@ import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import React, { Fragment } from 'react'
 
-import { useTheme } from '../../contexts/ThemeContext'
+import { useTheme } from '@/contexts/ThemeContext'
 
 interface DropdownItem {
-  label: string
+  label: string | React.ReactNode
   onClick: () => void
   disabled?: boolean
   icon?: React.ReactNode
@@ -44,7 +44,7 @@ const Dropdown: React.FC<DropdownProps> = ({ trigger, items, className = '', ali
         leaveTo='transform opacity-0 scale-95'
       >
         <Menu.Items
-          className={`absolute ${align === 'right' ? 'right-0' : 'left-0'} mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${menuClasses}`}
+          className={`absolute ${align === 'right' ? 'right-0' : 'left-0'} z-50 mt-2 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${menuClasses}`}
         >
           <div className='py-1'>
             {items.map((item, index) => (

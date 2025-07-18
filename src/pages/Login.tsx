@@ -1,10 +1,13 @@
+import { EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
-import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { loginFailure, loginStart, loginSuccess } from '../store/slices/authSlice'
-import { fetchUserSuccess } from '../store/slices/userSlice'
+import Button from '@/components/ui/Button'
+import Input from '@/components/ui/Input'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { loginFailure, loginStart, loginSuccess } from '@/store/slices/authSlice'
+import { fetchUserSuccess } from '@/store/slices/userSlice'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -27,11 +30,7 @@ export default function Login() {
 
     try {
       dispatch(loginStart())
-
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000))
-
-      // Mock successful login
       const mockToken = 'mock-jwt-token-' + Date.now()
       const mockUser = {
         id: '1',
@@ -39,18 +38,14 @@ export default function Login() {
         name: 'John Doe',
         avatar: 'https://via.placeholder.com/150'
       }
-
       dispatch(loginSuccess({ token: mockToken }))
       dispatch(fetchUserSuccess(mockUser))
-
-      // Redirect to home page
       navigate('/')
     } catch {
       dispatch(loginFailure(t('login.error.failed')))
     }
   }
 
-  // Redirect if already authenticated
   if (isAuthenticated) {
     navigate('/')
 
@@ -73,61 +68,39 @@ export default function Login() {
               </h2>
               <p className='mt-2 text-center text-sm text-gray-600 dark:text-gray-400'>{t('login.subtitle')}</p>
             </div>
-
             <div className='mt-8 sm:mx-auto sm:w-full sm:max-w-sm'>
               {error && (
                 <div className='mb-4 rounded-md bg-red-50 dark:bg-red-900/20 p-4 border border-red-200 dark:border-red-800'>
                   <div className='text-sm text-red-700 dark:text-red-400'>{error}</div>
                 </div>
               )}
-
               <form onSubmit={handleSubmit} className='space-y-6'>
-                <div>
-                  <label htmlFor='email' className='block text-sm/6 font-medium text-gray-900 dark:text-gray-100'>
-                    {t('login.email')}
-                  </label>
-                  <div className='mt-2'>
-                    <input
-                      id='email'
-                      name='email'
-                      type='email'
-                      required
-                      value={email}
-                      onChange={e => setEmail(e.target.value)}
-                      autoComplete='email'
-                      className='block w-full rounded-md bg-white dark:bg-gray-800 px-3 py-1.5 text-base text-gray-900 dark:text-gray-100 outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-600 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 dark:focus:outline-indigo-500 sm:text-sm/6 border border-gray-300 dark:border-gray-600'
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className='flex items-center justify-between'>
-                    <label htmlFor='password' className='block text-sm/6 font-medium text-gray-900 dark:text-gray-100'>
-                      {t('login.password')}
-                    </label>
-                    <div className='text-sm'>
-                      <a
-                        href='#'
-                        className='font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300'
-                      >
-                        {t('login.forgotPassword')}
-                      </a>
-                    </div>
-                  </div>
-                  <div className='mt-2'>
-                    <input
-                      id='password'
-                      name='password'
-                      type='password'
-                      required
-                      value={password}
-                      onChange={e => setPassword(e.target.value)}
-                      autoComplete='current-password'
-                      className='block w-full rounded-md bg-white dark:bg-gray-800 px-3 py-1.5 text-base text-gray-900 dark:text-gray-100 outline-1 -outline-offset-1 outline-gray-300 dark:outline-gray-600 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 dark:focus:outline-indigo-500 sm:text-sm/6 border border-gray-300 dark:border-gray-600'
-                    />
-                  </div>
-                </div>
-
+                <Input
+                  id='email'
+                  name='email'
+                  type='email'
+                  label={t('login.email')}
+                  placeholder={t('login.emailPlaceholder')}
+                  required
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  autoComplete='email'
+                  leftIcon={<EnvelopeIcon className='h-5 w-5' />}
+                  fullWidth
+                />
+                <Input
+                  id='password'
+                  name='password'
+                  type='password'
+                  label={t('login.password')}
+                  placeholder={t('login.passwordPlaceholder')}
+                  required
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  autoComplete='current-password'
+                  leftIcon={<LockClosedIcon className='h-5 w-5' />}
+                  fullWidth
+                />
                 <div className='flex items-center justify-between'>
                   <div className='flex items-center'>
                     <input
@@ -142,19 +115,19 @@ export default function Login() {
                       {t('login.rememberMe')}
                     </label>
                   </div>
+                  <div className='text-sm'>
+                    <a
+                      href='#'
+                      className='font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300'
+                    >
+                      {t('login.forgotPassword')}
+                    </a>
+                  </div>
                 </div>
-
-                <div>
-                  <button
-                    type='submit'
-                    disabled={loading}
-                    className='flex w-full justify-center rounded-md bg-indigo-600 hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200'
-                  >
-                    {loading ? t('login.signingIn') : t('login.signIn')}
-                  </button>
-                </div>
+                <Button type='submit' disabled={loading} variant='primary' size='md' className='w-full'>
+                  {loading ? t('login.signingIn') : t('login.signIn')}
+                </Button>
               </form>
-
               <div className='mt-6'>
                 <div className='relative'>
                   <div className='absolute inset-0 flex items-center'>
@@ -166,22 +139,14 @@ export default function Login() {
                     </span>
                   </div>
                 </div>
-
                 <div className='mt-6 grid grid-cols-2 gap-3'>
-                  <button
-                    type='button'
-                    className='flex w-full items-center justify-center gap-3 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200'
-                  >
+                  <Button type='button' variant='outline' size='md' className='w-full flex items-center gap-3'>
                     <svg className='h-5 w-5' aria-hidden='true' fill='currentColor' viewBox='0 0 20 20'>
                       <path d='M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84' />
                     </svg>
                     <span className='text-sm font-semibold leading-6'>Twitter</span>
-                  </button>
-
-                  <button
-                    type='button'
-                    className='flex w-full items-center justify-center gap-3 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200'
-                  >
+                  </Button>
+                  <Button type='button' variant='outline' size='md' className='w-full flex items-center gap-3'>
                     <svg className='h-5 w-5' aria-hidden='true' fill='currentColor' viewBox='0 0 20 20'>
                       <path
                         fillRule='evenodd'
@@ -190,10 +155,9 @@ export default function Login() {
                       />
                     </svg>
                     <span className='text-sm font-semibold leading-6'>GitHub</span>
-                  </button>
+                  </Button>
                 </div>
               </div>
-
               <p className='mt-8 text-center text-sm/6 text-gray-500 dark:text-gray-400'>
                 {t('login.noAccount')}{' '}
                 <a

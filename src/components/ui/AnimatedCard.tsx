@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { useTheme } from '../../contexts/ThemeContext'
-import { useGSAPAnimation } from '../../hooks/useGSAPAnimation'
+import { useTheme } from '@/contexts/ThemeContext'
+import { useGSAPAnimation } from '@/hooks/useGSAPAnimation'
 
 interface AnimatedCardProps {
   children: React.ReactNode

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import { Button, Card, Dropdown, Input, Modal, ThemeToggle } from '../components/ui'
-import InputWithIcons from '../components/ui/InputWithIcons'
-import { useTheme } from '../contexts/ThemeContext'
+import { Button, Card, Dropdown, Input, Modal, ThemeToggle } from '@/components/ui'
+import InputWithIcons from '@/components/ui/InputWithIcons'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const ThemeDemo = () => {
   const { theme } = useTheme()

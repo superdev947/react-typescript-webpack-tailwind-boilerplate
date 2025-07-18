@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
-import ReduxExample from '../components/ReduxExample'
+import ReduxExample from '@/components/ReduxExample'
 
 const Home: FC = () => {
   const { t } = useTranslation()

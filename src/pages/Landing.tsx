@@ -9,17 +9,17 @@ import {
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import ComparisonTableSection from '../components/landing/ComparisonTableSection'
-import CTASection from '../components/landing/CTASection'
-import FAQSection from '../components/landing/FAQSection'
-import FeaturesSection from '../components/landing/FeaturesSection'
-import FooterSection from '../components/landing/FooterSection'
-import HeroSection from '../components/landing/HeroSection'
-import NewsletterSection from '../components/landing/NewsletterSection'
-import PricingSection from '../components/landing/PricingSection'
-import StatisticsSection from '../components/landing/StatisticsSection'
-import TechStackSection from '../components/landing/TechStackSection'
-import TestimonialSection from '../components/landing/TestimonialSection'
+import ComparisonTableSection from '@/components/landing/ComparisonTableSection'
+import CTASection from '@/components/landing/CTASection'
+import FAQSection from '@/components/landing/FAQSection'
+import FeaturesSection from '@/components/landing/FeaturesSection'
+import FooterSection from '@/components/landing/FooterSection'
+import HeroSection from '@/components/landing/HeroSection'
+import NewsletterSection from '@/components/landing/NewsletterSection'
+import PricingSection from '@/components/landing/PricingSection'
+import StatisticsSection from '@/components/landing/StatisticsSection'
+import TechStackSection from '@/components/landing/TechStackSection'
+import TestimonialSection from '@/components/landing/TestimonialSection'
 
 const Landing: FC = () => {
   const { t } = useTranslation()
@@ -64,7 +64,7 @@ const Landing: FC = () => {
         name: t('landing.testimonials.testimonial1.author.name'),
         handle: t('landing.testimonials.testimonial1.author.handle'),
         imageUrl:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
       }
     },
     {

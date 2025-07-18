@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
-import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { loginFailure, loginStart, loginSuccess, logout } from '../store/slices/authSlice'
-import { clearUser, fetchUserSuccess } from '../store/slices/userSlice'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { loginFailure, loginStart, loginSuccess, logout } from '@/store/slices/authSlice'
+import { clearUser, fetchUserSuccess } from '@/store/slices/userSlice'
 
 const ReduxExample: FC = () => {
   const dispatch = useAppDispatch()

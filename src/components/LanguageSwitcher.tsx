@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import CountryFlag from 'react-country-flag'
 import { useTranslation } from 'react-i18next'
 
 import { Dropdown } from './ui'
@@ -6,15 +7,15 @@ import { Dropdown } from './ui'
 interface LanguageOption {
   code: string
   name: string
-  flag: string
+  countryCode: string
 }
 
 const languages: LanguageOption[] = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' }
+  { code: 'en', name: 'English', countryCode: 'US' },
+  { code: 'es', name: 'Español', countryCode: 'ES' },
+  { code: 'fr', name: 'Français', countryCode: 'FR' },
+  { code: 'de', name: 'Deutsch', countryCode: 'DE' },
+  { code: 'zh', name: '中文', countryCode: 'CN' }
 ]
 
 const LanguageSwitcher: FC = () => {
@@ -30,12 +31,27 @@ const LanguageSwitcher: FC = () => {
     <Dropdown
       trigger={
         <div className='flex items-center space-x-2'>
-          <span className='text-lg'>{currentLanguage.flag}</span>
+          <CountryFlag
+            countryCode={currentLanguage.countryCode}
+            svg
+            style={{ width: '1.5em', height: '1.5em' }}
+            title={currentLanguage.name}
+          />
           <span>{currentLanguage.name}</span>
         </div>
       }
       items={languages.map(lang => ({
-        label: `${lang.flag} ${lang.name}`,
+        label: (
+          <span className='flex items-center space-x-2'>
+            <CountryFlag
+              countryCode={lang.countryCode}
+              svg
+              style={{ width: '1.5em', height: '1.5em' }}
+              title={lang.name}
+            />
+            <span>{lang.name}</span>
+          </span>
+        ),
         onClick: () => handleLanguageChange(lang.code)
       }))}
     />

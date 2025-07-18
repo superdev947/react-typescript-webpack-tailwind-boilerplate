@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import Slider from '../ui/Slider'
 
 interface Testimonial {

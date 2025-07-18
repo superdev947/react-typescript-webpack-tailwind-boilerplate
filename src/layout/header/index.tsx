@@ -23,11 +23,11 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate } from 'react-router-dom'
 
-import LanguageSwitcher from '../../components/LanguageSwitcher'
-import { ThemeToggle } from '../../components/ui'
-import { useAppDispatch, useAppSelector } from '../../store/hooks'
-import { logout } from '../../store/slices/authSlice'
-import { clearUser } from '../../store/slices/userSlice'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { ThemeToggle } from '@/components/ui'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { logout } from '@/store/slices/authSlice'
+import { clearUser } from '@/store/slices/userSlice'
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },

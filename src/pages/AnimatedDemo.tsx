@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import { AnimatedButton, AnimatedCard, Dropdown, Input, Modal, ThemeToggle } from '../components/ui'
-import InputWithIcons from '../components/ui/InputWithIcons'
-import { useTheme } from '../contexts/ThemeContext'
+import { AnimatedButton, AnimatedCard, Dropdown, Input, Modal, ThemeToggle } from '@/components/ui'
+import InputWithIcons from '@/components/ui/InputWithIcons'
+import { useTheme } from '@/contexts/ThemeContext'
 
 const AnimatedDemo = () => {
   const { theme } = useTheme()
