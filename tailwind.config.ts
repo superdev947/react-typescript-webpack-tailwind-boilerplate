@@ -5,7 +5,11 @@ const config = withMT({
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     colors: {},
-    extend: {},
+    extend: {
+      colors: {
+        // Custom theme colors can be added here
+      }
+    },
     transformOrigin: {},
     fontFamily: {}
   },

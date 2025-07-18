@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { loginStart, loginSuccess, loginFailure } from '../store/slices/authSlice'
+import { loginFailure, loginStart, loginSuccess } from '../store/slices/authSlice'
 import { fetchUserSuccess } from '../store/slices/userSlice'
 
 export default function Login() {
@@ -11,11 +11,11 @@ export default function Login() {
   const navigate = useNavigate()
 
   const dispatch = useAppDispatch()
-  const { loading, error, isAuthenticated } = useAppSelector((state) => state.auth)
+  const { loading, error, isAuthenticated } = useAppSelector(state => state.auth)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!email || !password) {
       dispatch(loginFailure('Please fill in all fields'))
 
@@ -74,7 +74,7 @@ export default function Login() {
               <div className='text-sm text-red-700'>{error}</div>
             </div>
           )}
-          
+
           <form onSubmit={handleSubmit} className='space-y-6'>
             <div>
               <label htmlFor='email' className='block text-sm/6 font-medium text-gray-900'>
@@ -87,7 +87,7 @@ export default function Login() {
                   type='email'
                   required
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={e => setEmail(e.target.value)}
                   autoComplete='email'
                   className='block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6'
                 />
@@ -112,7 +112,7 @@ export default function Login() {
                   type='password'
                   required
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={e => setPassword(e.target.value)}
                   autoComplete='current-password'
                   className='block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6'
                 />

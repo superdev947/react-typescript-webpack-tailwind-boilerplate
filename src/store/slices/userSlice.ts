@@ -16,14 +16,14 @@ interface UserState {
 const initialState: UserState = {
   currentUser: null,
   loading: false,
-  error: null,
+  error: null
 }
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    fetchUserStart: (state) => {
+    fetchUserStart: state => {
       state.loading = true
       state.error = null
     },
@@ -41,23 +41,17 @@ const userSlice = createSlice({
         state.currentUser = { ...state.currentUser, ...action.payload }
       }
     },
-    clearUser: (state) => {
+    clearUser: state => {
       state.currentUser = null
       state.loading = false
       state.error = null
     },
-    clearUserError: (state) => {
+    clearUserError: state => {
       state.error = null
-    },
-  },
+    }
+  }
 })
 
-export const {
-  fetchUserStart,
-  fetchUserSuccess,
-  fetchUserFailure,
-  updateUser,
-  clearUser,
-  clearUserError,
-} = userSlice.actions
-export default userSlice.reducer 
+export const { fetchUserStart, fetchUserSuccess, fetchUserFailure, updateUser, clearUser, clearUserError } =
+  userSlice.actions
+export default userSlice.reducer

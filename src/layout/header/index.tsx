@@ -22,6 +22,8 @@ import {
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { ThemeToggle } from '../../components/ui'
+
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
   { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
@@ -38,7 +40,7 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className='bg-white'>
+    <header className='bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700'>
       <nav aria-label='Global' className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8'>
         <div className='flex lg:flex-1'>
           <Link to='/' className='-m-1.5 p-1.5'>
@@ -54,7 +56,7 @@ export default function Example() {
           <button
             type='button'
             onClick={() => setMobileMenuOpen(true)}
-            className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700'
+            className='-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300'
           >
             <span className='sr-only'>Open main menu</span>
             <Bars3Icon aria-hidden='true' className='size-6' />
@@ -62,9 +64,9 @@ export default function Example() {
         </div>
         <PopoverGroup className='hidden lg:flex lg:gap-x-12'>
           <Popover className='relative'>
-            <PopoverButton className='flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900'>
+            <PopoverButton className='flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
               Product
-              <ChevronDownIcon aria-hidden='true' className='size-5 flex-none text-gray-400' />
+              <ChevronDownIcon aria-hidden='true' className='size-5 flex-none text-gray-400 dark:text-gray-500' />
             </PopoverButton>
 
             <PopoverPanel
@@ -105,15 +107,19 @@ export default function Example() {
             </PopoverPanel>
           </Popover>
 
-          <Link to='/' className='text-sm/6 font-semibold text-gray-900'>
+          <Link to='/' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
             Home
           </Link>
-          <Link to='/login' className='text-sm/6 font-semibold text-gray-900'>
+          <Link to='/theme-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
+            Theme Demo
+          </Link>
+          <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
             Login
           </Link>
         </PopoverGroup>
-        <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          <Link to='/login' className='text-sm/6 font-semibold text-gray-900'>
+        <div className='hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4'>
+          <ThemeToggle />
+          <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
             Log in <span aria-hidden='true'>&rarr;</span>
           </Link>
         </div>
@@ -165,6 +171,12 @@ export default function Example() {
                   className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
                 >
                   Home
+                </Link>
+                <Link
+                  to='/theme-demo'
+                  className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
+                >
+                  Theme Demo
                 </Link>
                 <Link
                   to='/login'
