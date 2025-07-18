@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-const FooterSection: FC = () => (
+const Footer: FC = () => (
   <footer className='mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8'>
     <div className='mx-auto max-w-7xl py-12 md:py-16 border-t border-gray-900/10 dark:border-gray-700/10'>
       <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-10'>
@@ -87,4 +87,4 @@ const FooterSection: FC = () => (
   </footer>
 )
 
-export default FooterSection 
+export default Footer

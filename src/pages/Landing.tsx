@@ -13,7 +13,6 @@ import ComparisonTableSection from '@/components/landing/ComparisonTableSection'
 import CTASection from '@/components/landing/CTASection'
 import FAQSection from '@/components/landing/FAQSection'
 import FeaturesSection from '@/components/landing/FeaturesSection'
-import FooterSection from '@/components/landing/FooterSection'
 import HeroSection from '@/components/landing/HeroSection'
 import NewsletterSection from '@/components/landing/NewsletterSection'
 import PricingSection from '@/components/landing/PricingSection'
@@ -149,7 +148,6 @@ const Landing: FC = () => {
       <FAQSection t={t} />
       <CTASection t={t} />
       <NewsletterSection t={t} />
-      <FooterSection />
     </div>
   )
 }
