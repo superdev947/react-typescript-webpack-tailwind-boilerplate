@@ -25,6 +25,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { ThemeToggle } from '@/components/ui'
+import UserProfileMenu from '@/components/UserProfileMenu'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { logout } from '@/store/slices/authSlice'
 import { clearUser } from '@/store/slices/userSlice'
@@ -78,6 +79,16 @@ export default function Header() {
           </button>
         </div>
         <PopoverGroup className='hidden lg:flex lg:gap-x-12'>
+          <Link to='/' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
+            {t('navigation.home')}
+          </Link>
+          <Link to='/theme-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
+            {t('navigation.themeDemo')}
+          </Link>
+          <Link to='/animated-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
+            {t('navigation.animatedDemo')}
+          </Link>
+
           <Popover className='relative'>
             <PopoverButton className='flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
               Product
@@ -121,27 +132,13 @@ export default function Header() {
               </div>
             </PopoverPanel>
           </Popover>
-
-          <Link to='/' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            {t('navigation.home')}
-          </Link>
-          <Link to='/theme-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            {t('navigation.themeDemo')}
-          </Link>
-          <Link to='/animated-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
-            {t('navigation.animatedDemo')}
-          </Link>
         </PopoverGroup>
         <div className='hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-4'>
           <LanguageSwitcher />
           <ThemeToggle />
+
           {isAuthenticated ? (
-            <button
-              onClick={handleLogout}
-              className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100 hover:underline px-3 py-2 rounded'
-            >
-              {t('common.logout')}
-            </button>
+            <UserProfileMenu />
           ) : (
             <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
               {t('navigation.login')} <span aria-hidden='true'>&rarr;</span>

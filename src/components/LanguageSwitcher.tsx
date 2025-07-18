@@ -37,7 +37,7 @@ const LanguageSwitcher: FC = () => {
             style={{ width: '1.5em', height: '1.5em' }}
             title={currentLanguage.name}
           />
-          <span>{currentLanguage.name}</span>
+          <span className='uppercase'>{currentLanguage.code}</span>
         </div>
       }
       items={languages.map(lang => ({
