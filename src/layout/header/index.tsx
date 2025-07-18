@@ -113,6 +113,9 @@ export default function Example() {
           <Link to='/theme-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
             Theme Demo
           </Link>
+          <Link to='/animated-demo' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
+            Animated Demo
+          </Link>
           <Link to='/login' className='text-sm/6 font-semibold text-gray-900 dark:text-gray-100'>
             Login
           </Link>
@@ -177,6 +180,12 @@ export default function Example() {
                   className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
                 >
                   Theme Demo
+                </Link>
+                <Link
+                  to='/animated-demo'
+                  className='-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50'
+                >
+                  Animated Demo
                 </Link>
                 <Link
                   to='/login'

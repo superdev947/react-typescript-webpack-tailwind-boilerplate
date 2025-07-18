@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import { ThemeProvider } from './contexts/ThemeContext'
 import Header from './layout/header'
+import AnimatedDemo from './pages/AnimatedDemo'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import NotFound from './pages/NotFound'
@@ -24,6 +25,7 @@ const App: FC = () => {
                   <Route path='/' element={<Home />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/theme-demo' element={<ThemeDemo />} />
+                  <Route path='/animated-demo' element={<AnimatedDemo />} />
                   <Route path='*' element={<NotFound />} />
                 </Routes>
               </main>
